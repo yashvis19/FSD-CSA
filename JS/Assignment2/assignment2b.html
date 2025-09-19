@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Image Gallery</h1>
+        <img src="w.jpg" alt="view" style="width:200px">
+        <button onclick="changeImage()">Change Image</button>
+    </div>
+    <script>
+        var images = [
+            {
+                src: "w.jpg",
+                alt: "view"
+            },
+            {
+                src: "cybersecurity.png",
+                alt: "form"
+            },
+            {
+                src: "ss.png",
+                alt: "screenshot"
+            }
+        ];
+        var currentIndex = 0;
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            var img = document.querySelector("img");
+            img.src = images[currentIndex].src;
+            img.alt = images[currentIndex].alt;
+        }
+    </script>
+</body>
+</html>
